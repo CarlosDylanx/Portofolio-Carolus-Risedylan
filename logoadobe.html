@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPL Library</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #323946;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 255, 255, 0.8);
+            overflow: hidden;
+            width: 250px;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 255, 255, 0.8);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-content h3 {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .card-content p {
+            margin: 8px 0 0;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        /* Efek cahaya membesar */
+        .glow {
+            animation: glow-effect 0.5s ease-out;
+        }
+        @keyframes glow-effect {
+            0% {
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.6);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(0, 255, 255, 0.9), 0 0 60px rgba(0, 255, 255, 0.7);
+                transform: scale(1.05);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.6);
+                transform: scale(1);
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" onclick="addGlow(this)">
+            <img alt="UFO Game cover with stars and buttons labeled 'Mulai' and 'Keluar'" height="150" src="logoadobe1.png" width="250" />
+            <div class="card-content">
+                <h3>Logo Adobe Ilustrator</h3>
+            </p>Desain1<p>Membuat Logo Perusahan Dengan Adobe Illustrator</p>
+            </div>
+        </div>
+        <div class="card" onclick="addGlow(this)">
+            <img alt="Screenshot of UFO game level with a UFO and obstacles" height="150" src="logoadobe2.png" width="250" />
+            <div class="card-content">
+                <h3>Logo Adobe Ilustrator</h3>
+            </p>Desain2<p>Membuat Logo Perusahan Dengan Adobe Illustrator</p>
+            </div>
+        </div>
+        <div class="card" onclick="addGlow(this)">
+            <img alt="Screenshot of UFO game level with a UFO and obstacles" height="150" src="logoadobe3.png" width="250" />
+            <div class="card-content">
+                <h3>Logo Adobe Ilustrator</h3>
+            </p>Desain3<p>Membuat Logo Perusahan Dengan Adobe Illustrator</p>
+            </div>
+        </div>
+        <div class="card" onclick="addGlow(this)">
+            <img alt="Screenshot of UFO game level with a UFO and obstacles" height="150" src="logoadobe4.png" width="250" />
+            <div class="card-content">
+                <h3>Logo Adobe Ilustrator</h3>
+            </p>Desain4<p>Membuat Logo Perusahan Dengan Adobe Illustrator</p>
+            </div>
+        </div>
+       
+    </div>
+
+    <script>
+        function addGlow(card) {
+            // Tambahkan kelas glow untuk efek cahaya
+            card.classList.add('glow');
+            
+            // Hapus efek glow setelah animasi selesai
+            setTimeout(() => {
+                card.classList.remove('glow');
+            }, 500);
+        }
+    </script>
+</body>
+</html>
